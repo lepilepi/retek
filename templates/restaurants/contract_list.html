@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <a href="{% url create_contract %}">new contract</a>
 {%  if object_list %}
 <table>
@@ -27,3 +31,5 @@
 {% else %}
     <p>No contracts yet.</p>
 {% endif %}
+
+{% endblock %}

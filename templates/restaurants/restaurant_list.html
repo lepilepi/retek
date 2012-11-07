@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <a href="{% url create_restaurant %}">new restaurant</a>
 {%  if object_list %}
 <table>
@@ -21,3 +25,5 @@
 {% else %}
     <p>No restaurants yet.</p>
 {% endif %}
+
+{% endblock %}
