@@ -1,0 +1,29 @@
+<a href="{% url create_contract %}">new contract</a>
+{%  if object_list %}
+<table>
+    <thead>
+        <tr>
+            <th>restaurant</th>
+            <th>agent</th>
+            <th>contact person</th>
+            <th>duration</th>
+            <th>share</th>
+            <th>timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for o in object_list %}
+        <tr>
+            <td>{{ o.restaurant }}</td>
+            <td>{{ o.agent.get_full_name }}</td>
+            <td>{{ o.contact.get_full_name }}</td>
+            <td>{{ o.duration }}</td>
+            <td>{{ o.share }}</td>
+            <td>{{ o.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    <p>No contracts yet.</p>
+{% endif %}

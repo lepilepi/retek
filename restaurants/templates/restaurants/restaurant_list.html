@@ -1,0 +1,23 @@
+<a href="{% url create_restaurant %}">new restaurant</a>
+{%  if object_list %}
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>address</th>
+            <th>phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for o in object_list %}
+        <tr>
+            <td>{{ o.name }}</td>
+            <td>{{ o.address }}</td>
+            <td>{{ o.phone }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    <p>No restaurants yet.</p>
+{% endif %}
